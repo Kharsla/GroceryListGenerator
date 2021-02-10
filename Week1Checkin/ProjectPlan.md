@@ -1,3 +1,5 @@
+All areas that just list story see application flow for all areas of focus including research.
+
 Week 4
 Create Project Structure
 Weekly Reflection
