@@ -1,6 +1,7 @@
 package finalproject.persistence;
 
 import finalproject.entity.Recipe;
+import finalproject.entity.User;
 import finalproject.test.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,13 +30,16 @@ class RecipeDaoTest {
      */
     @Test
     void insertSuccess() {
-
-        Recipe recipe = new Recipe(1, "sandwich", "lunch");
+        UserDao userDao = new UserDao();
+        User user = userDao.getById(1);
+        Recipe recipe = new Recipe(user, "sandwich", "lunch");
         int id = dao.insert(recipe);
         assertNotEquals(0,id);
         Recipe insertedrecipe = dao.getById(id);
         assertEquals("sandwich", insertedrecipe.getRecipeName());
         assertEquals("lunch", insertedrecipe.getMealType());
+        assertNotNull(insertedrecipe.getUser());
+        assertEquals("student", insertedrecipe.getUser().getUserName());
     }
 
     /**
@@ -43,8 +47,8 @@ class RecipeDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(16));
-        assertNull(dao.getById(16));
+        dao.delete(dao.getById(4));
+        assertNull(dao.getById(4));
     }
 
     /**
@@ -53,10 +57,10 @@ class RecipeDaoTest {
     @Test
     void updateSuccess() {
         String newRecipeName = "tomato soup";
-        Recipe recipeToUpdate = dao.getById(9);
+        Recipe recipeToUpdate = dao.getById(2);
         recipeToUpdate.setRecipeName(newRecipeName);
         dao.update(recipeToUpdate);
-        Recipe retrievedRecipe = dao.getById(9);
+        Recipe retrievedRecipe = dao.getById(2);
         assertEquals(newRecipeName, retrievedRecipe.getRecipeName());
     }
 

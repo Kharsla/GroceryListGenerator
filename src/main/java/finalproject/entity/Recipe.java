@@ -10,16 +10,17 @@ import javax.persistence.*;
 @Entity(name = "Recipe")
 @Table(name = "recipes")
 public class Recipe {
-    @Column(name = "recipeName")
-    private String recipeName;
-    @Column(name = "mealType")
-    private String mealType;
-    @Column(name = "userId")
-    private int userId;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native", strategy = "native")
     private int recipeId;
+
+    private String recipeName;
+    private String mealType;
+
+    @ManyToOne
+    @JoinColumn(name="userId", nullable=false)
+    private User user;
 
     /**
      * Instantiates a new recipe.
@@ -32,10 +33,10 @@ public class Recipe {
      * @param recipeName the name of the recipe
      * @param mealType the type of meal
      */
-    public Recipe(int userId, String recipeName, String mealType) {
-        this.userId = userId;
+    public Recipe(User user, String recipeName, String mealType) {
+        this.user = user;
         this.recipeName = recipeName;
-        this. mealType = mealType;
+        this.mealType = mealType;
     }
 
     /**
@@ -68,6 +69,22 @@ public class Recipe {
      */
     public void setMealType(String mealType) {
         this.mealType= mealType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 
 }
