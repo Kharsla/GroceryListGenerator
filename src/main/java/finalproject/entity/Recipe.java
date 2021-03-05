@@ -2,13 +2,15 @@ package finalproject.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class to represent a recipe
  */
 @Entity(name = "Recipe")
 @Table(name = "recipes")
+
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator="native")
@@ -17,6 +19,9 @@ public class Recipe {
 
     private String recipeName;
     private String mealType;
+
+    @OneToMany(mappedBy="recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name="userId", nullable=false)
