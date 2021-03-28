@@ -1,7 +1,7 @@
 <Context docBase="GroceryListGenerator_war" path="/GroceryListGenerator_war" reloadable="true">
     <Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.cj.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/GroceryListGenerator?user=tomcat&amp;password=tomcat"
+           connectionURL="jdbc:mysql://localhost:3306/GroceryListGenerator?user=root&amp;password=uBUs4XoxU9UsEw"
            userTable="users" userNameCol="userName" userCredCol="password"
            userRoleTable="role" roleNameCol="roleName" >
     </Realm>

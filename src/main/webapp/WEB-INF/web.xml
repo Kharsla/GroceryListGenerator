@@ -11,7 +11,7 @@
   </login-config>
 
   <!-- Protect the recipe List page. -->
-  <security-constraint>
+   <security-constraint>
     <web-resource-collection>
       <web-resource-name>index</web-resource-name>
       <url-pattern>/index.jsp</url-pattern>

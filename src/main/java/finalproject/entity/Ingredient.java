@@ -17,7 +17,7 @@ public class Ingredient {
     private int ingredientId;
 
     private String ingredientName;
-    private int quatity;
+    private int quantity;
     private String unitOfMeasure;
 
     @ManyToOne
@@ -30,10 +30,10 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(int ingredientId, String ingredientName, int quatity, String unitOfMeasure, Recipe recipe) {
+    public Ingredient(int ingredientId, String ingredientName, int quantity, String unitOfMeasure, Recipe recipe) {
         this.ingredientId = ingredientId;
         this.ingredientName = ingredientName;
-        this.quatity = quatity;
+        this.quantity = quantity;
         this.unitOfMeasure = unitOfMeasure;
         this.recipe = recipe;
     }
@@ -54,12 +54,12 @@ public class Ingredient {
         this.ingredientName = ingredientName;
     }
 
-    public int getQuatity() {
-        return quatity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuatity(int quatity) {
-        this.quatity = quatity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getUnitOfMeasure() {

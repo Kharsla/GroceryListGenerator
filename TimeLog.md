@@ -1,4 +1,41 @@
-2/6: Completed problem statement, User stories, and project plan. 1 hour
-2/8: Made Wireframes. 1 hour
-2/14: worked with hibernate and doa. Completed week 4 exercise in project
-2/20: worked with hibernate and completed wee 5 exercise in project.
+<html>
+<table>
+<tr>
+<td>2/6</td>
+<td>Completed problem statement, User stories, and project plan. 1 hour</td>
+</tr>
+<tr>
+<td>2/8</td>
+<td>Completed problem statement, User stories, and project plan. 1 hour</td>
+</tr>
+<tr>
+<td>2/14</td>
+<td>Made Wireframes. 1 hour</td>
+</tr>
+<tr>
+<td>2/20</td>
+<td>worked with hibernate and doa. Completed week 4 exercise in project</td>
+</tr>
+<tr>
+<td>3/5</td>
+<td>worked with hibernate and completed wee 5 exercise in project.</td>
+</tr>
+<tr>
+<td></td>
+<td>completed database</td>
+</tr>
+<tr>
+<td></td>
+<td>Added user authentication</td>
+</tr>
+<tr>
+<td>3/20</td>
+<td>Deployed to AWS</td>
+</tr>
+<tr>
+<td>3/26</td>
+<td>Corrected Login after deplyed to AWS and added a jsp to display recipes</td>
+</tr>
+
+</table>
+</html>
