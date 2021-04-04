@@ -1,7 +1,5 @@
 package finalproject.controller;
 
-import finalproject.entity.Recipe;
-import finalproject.entity.User;
 import finalproject.persistence.RecipeDao;
 
 import javax.servlet.RequestDispatcher;

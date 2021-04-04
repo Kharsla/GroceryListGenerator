@@ -3,6 +3,7 @@
 <h2>Hello World!</h2>
 <form method="get" action="displayRecipes">
 <input type="submit">
+<a href="addNewRecipe.jsp">Click here</a>
 </form>
 </body>
 </html>
