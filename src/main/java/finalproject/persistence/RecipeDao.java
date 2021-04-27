@@ -4,6 +4,7 @@ import finalproject.entity.Recipe;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -72,4 +73,22 @@ public class RecipeDao {
         session.close();
         return recipe;
     }
+
+    public List<Recipe> getByNameSearch(String searchTerm) {
+        Session session = sessionFactory.openSession();
+        String sql = "FROM Recipe WHERE recipeName LIKE '%" + searchTerm + "%'";
+        Query query = session.createQuery(sql);
+        List<Recipe> results = (List<Recipe>) query.list();
+        return results;
+
+    }
+
+    public List<Recipe> getRecipeFilter(String filterTerm) {
+        Session session = sessionFactory.openSession();
+        String sql = "FROM Recipe WHERE mealType LIKE '%" + filterTerm + "%'";
+        Query query = session.createQuery(sql);
+        List<Recipe> results = (List<Recipe>) query.list();
+        return results;
+    }
+
 }

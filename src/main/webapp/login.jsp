@@ -18,5 +18,6 @@
         <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
     </TABLE>
 </FORM>
+<p>Don't have an account? Sign up <a href="signup.jsp">here</a></p>
 </body>
 </html>

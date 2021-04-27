@@ -3,13 +3,16 @@ package finalproject.persistence;
 import finalproject.entity.Recipe;
 import finalproject.entity.User;
 import finalproject.test.Database;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+//SET @@global.time_zone = '-05:00';
 class RecipeDaoTest {
+    private final Logger logger = LogManager.getLogger(this.getClass());
     RecipeDao dao;
 
     @BeforeEach
@@ -64,5 +67,13 @@ class RecipeDaoTest {
         assertEquals(newRecipeName, retrievedRecipe.getRecipeName());
     }
 
+    @Test
+    void getByNameSearchTest() {
+        RecipeDao dao = new RecipeDao();
+        List<Recipe> myList = dao.getByNameSearch("grilled");
+        Recipe recipe = myList.get(0);
+        assertEquals(recipe.getRecipeId(), 1);
+        logger.info(recipe.getRecipeId());
+    }
 
 }

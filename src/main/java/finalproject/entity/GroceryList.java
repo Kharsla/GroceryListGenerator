@@ -6,14 +6,13 @@ import java.util.Set;
 
 public class GroceryList {
     private Set<Recipe> recipes = new HashSet<Recipe>();
-    private Set<Ingredient> ingredients = new HashSet<Ingredient>();
+    
 
     public GroceryList() {
     }
 
-    public GroceryList(Set<Recipe> recipes, Set<Ingredient> ingredients) {
+    public GroceryList(Set<Recipe> recipes) {
         this.recipes = recipes;
-        this.ingredients = ingredients;
     }
 
     public Set<Recipe> getRecipes() {
@@ -23,12 +22,15 @@ public class GroceryList {
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
+    
 
-    public Set<Ingredient> getIngredients() {
-        return ingredients;
+    public Set<Ingredient> getIngredientsFromRecipes(Set<Recipe> recipes) {
+        Set<Ingredient> groceryList = new HashSet<Ingredient>();
+        for(Recipe nextRecipe: recipes) {
+            Set<Ingredient> recipeIngredients = nextRecipe.getIngredients();
+            groceryList.addAll(recipeIngredients);
+        }
+        return groceryList;
     }
 
-    public void setIngredients(Set<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
 }

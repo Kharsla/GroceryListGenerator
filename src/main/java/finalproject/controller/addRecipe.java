@@ -17,8 +17,11 @@ import java.io.IOException;
     )
     public class addRecipe extends HttpServlet {
         @Override
-        public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             Recipe recipe = new Recipe();
+            RecipeDao dao = new RecipeDao();
+
+            //hard coded fix later
             recipe.setRecipeName("spagehetii");
             recipe.setMealType("Dinner");
             req.setAttribute("recipe", recipe);

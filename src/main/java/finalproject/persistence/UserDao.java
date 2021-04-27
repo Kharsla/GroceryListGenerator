@@ -71,4 +71,18 @@ public class UserDao {
         session.close();
         return user;
     }
+
+    /**
+     * Gets a user by name
+     * @param username user name to search by
+     * @return a user
+     */
+    public User getByUserName(String username) {
+        Session session = sessionFactory.openSession();
+        User user = session.get(User.class, username);
+        session.close();
+        return user;
+    }
+
+
 }
