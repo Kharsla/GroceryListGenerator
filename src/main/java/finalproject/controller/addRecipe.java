@@ -1,8 +1,7 @@
 package finalproject.controller;
 
 import finalproject.entity.Recipe;
-import finalproject.persistence.RecipeDao;
-
+import finalproject.persistence.GenericDao;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +18,7 @@ import java.io.IOException;
         @Override
         public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             Recipe recipe = new Recipe();
-            RecipeDao dao = new RecipeDao();
+            GenericDao recipeDao = new GenericDao(Recipe.class);
 
             //hard coded fix later
             recipe.setRecipeName("spagehetii");

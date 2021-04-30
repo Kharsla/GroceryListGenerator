@@ -1,6 +1,8 @@
 package finalproject.controller;
 
+import finalproject.entity.Recipe;
 import finalproject.entity.User;
+import finalproject.persistence.GenericDao;
 import finalproject.persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
@@ -23,7 +25,7 @@ public class addUser extends HttpServlet {
         RequestDispatcher dispatcher;
 
         User user = new User();
-        UserDao dao = new UserDao();
+        GenericDao userDao = new GenericDao(User.class);
 
         String userName = req.getParameter("username");
         String password1 = req.getParameter("password1");
@@ -33,6 +35,7 @@ public class addUser extends HttpServlet {
             user.setUserName(userName);
             user.setPassword(password1);
             req.setAttribute("user", user);
+            userDao.insert(user);
             dispatcher = req.getRequestDispatcher("addSuccess.jsp");
         } else {
             //Will change once new jsp made
