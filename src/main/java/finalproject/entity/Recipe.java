@@ -99,4 +99,14 @@ public class Recipe {
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "recipeId=" + recipeId +
+                ", recipeName='" + recipeName + '\'' +
+                ", mealType='" + mealType + '\'' +
+                ", ingredients=" + ingredients +
+                ", user=" + user +
+                '}';
+    }
 }

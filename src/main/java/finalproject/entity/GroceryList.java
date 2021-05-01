@@ -1,8 +1,6 @@
 package finalproject.entity;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GroceryList {
     private Set<Recipe> recipes = new HashSet<Recipe>();
@@ -32,5 +30,21 @@ public class GroceryList {
         }
         return groceryList;
     }
+
+  /** NEED TO CHANGE TO COMBINE ONLY INGREDIENTS WITH LIKE UNITS OF MEASUREMENT
+   * public Set<Ingredient> combineLikeIngredients(Set<Ingredient> groceryList) {
+        private Map<String, Integer> updatedGroceryList new TreeMap<String, Integer>();
+
+        for(Ingredient nextIngredient: groceryList) {
+            if (updatedGroceryList.containsKey(nextIngredient.getIngredientName())) {
+                updatedGroceryList.put(nextIngredient.getIngredientName(), updatedGroceryList.get(nextIngredient) + nextIngredient.getQuantity());
+
+            } else {
+                updatedGroceryList.put(nextIngredient.getIngredientName(), nextIngredient.getQuantity());
+            }
+        }
+
+    }
+   **/
 
 }
