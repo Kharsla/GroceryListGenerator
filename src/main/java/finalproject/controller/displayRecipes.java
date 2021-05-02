@@ -41,6 +41,7 @@ public class displayRecipes extends HttpServlet {
         } else if (req.getParameterMap().containsKey("filter")) {
             String filterTerm = req.getParameter("filer");
             searchCriteria.put("mealType", filterTerm);
+
             recipes = recipeDao.getByMultipleCriteria(searchCriteria);
         } else {
             recipes = user.getRecipes();
