@@ -3,7 +3,9 @@ package finalproject.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
     /**
@@ -25,7 +27,7 @@ import java.util.Set;
 
 
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-        private Set<Recipe> recipes = new HashSet<>();
+        private List<Recipe> recipes = new ArrayList<>();
 
         public User() {
         }
@@ -59,11 +61,11 @@ import java.util.Set;
             this.userId = userId;
         }
 
-        public Set<Recipe> getRecipes() {
+        public List<Recipe> getRecipes() {
             return recipes;
         }
 
-        public void setRecipes(Set<Recipe> recipes) {
+        public void setRecipes(List<Recipe> recipes) {
             this.recipes = recipes;
         }
 

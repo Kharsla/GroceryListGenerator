@@ -66,14 +66,6 @@ class RecipeDaoTest {
         Recipe retrievedRecipe = dao.getById(2);
         assertEquals(newRecipeName, retrievedRecipe.getRecipeName());
     }
-
-    @Test
-    void getByNameSearchTest() {
-        RecipeDao dao = new RecipeDao();
-        List<Recipe> myList = dao.getByNameSearch("grilled");
-        Recipe recipe = myList.get(0);
-        assertEquals(recipe.getRecipeId(), 1);
-        logger.info(recipe.getRecipeId());
-    }
+    
 
 }

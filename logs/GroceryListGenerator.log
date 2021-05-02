@@ -12,3 +12,6 @@
 [INFO ] 2021-04-25 17:00:18.817 [main] RecipeDaoTest - 1
 [ERROR] 2021-04-25 17:05:21.042 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
 [INFO ] 2021-04-25 17:05:22.059 [main] RecipeDaoTest - 1
+[INFO ] 2021-05-01 19:25:32.118 [http-nio-8080-exec-6] displayRecipes - student
+[INFO ] 2021-05-01 19:29:10.198 [http-nio-8080-exec-6] displayRecipes - student
+[INFO ] 2021-05-01 19:51:48.128 [http-nio-8080-exec-6] displayRecipes - student

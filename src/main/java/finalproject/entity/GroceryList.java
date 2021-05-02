@@ -22,10 +22,10 @@ public class GroceryList {
     }
     
 
-    public Set<Ingredient> getIngredientsFromRecipes(Set<Recipe> recipes) {
-        Set<Ingredient> groceryList = new HashSet<Ingredient>();
+    public List<Ingredient> getIngredientsFromRecipes(List<Recipe> recipes) {
+        List<Ingredient> groceryList = new ArrayList<Ingredient>();
         for(Recipe nextRecipe: recipes) {
-            Set<Ingredient> recipeIngredients = nextRecipe.getIngredients();
+            List<Ingredient> recipeIngredients = nextRecipe.getIngredients();
             groceryList.addAll(recipeIngredients);
         }
         return groceryList;
