@@ -111,4 +111,14 @@ public class Recipe {
                 ", user=" + user +
                 '}';
     }
+
+    /**
+     * Adds a location to the Artist's set of locations
+     * @param ingredient
+     */
+    public void addIngredient(Ingredient ingredient) {
+        this.ingredients.add(ingredient);
+
+    }
+
 }

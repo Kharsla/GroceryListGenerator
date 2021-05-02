@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form method="get" action="addRecipe">
+<form method="post" action="addRecipe">
     <label for="recipeName">RecipeName:</label><br>
     <input type="text" id="recipeName" name="recipeName"><br>
 
@@ -41,7 +41,7 @@
         <option value="tbsp">Tbsp</option>
     </select>
  </div>
-
+<input type="submit" Value="submit">
 </form>
 <button id="btn">Add row</button>
 </body>

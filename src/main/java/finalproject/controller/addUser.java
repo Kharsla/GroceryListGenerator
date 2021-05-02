@@ -17,7 +17,7 @@ import java.io.IOException;
 
 @WebServlet(
         name = "addUser",
-        urlPatterns = { "/addRecipe" }
+        urlPatterns = { "/addUser" }
 )
 public class addUser extends HttpServlet {
     @Override

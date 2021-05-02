@@ -11,13 +11,18 @@
         <th>Meal Type </th>
         </thead>
         <tbody>
+
         <c:forEach var="recipe" items="${recipes}">
-            <tr>
+        <form method="post" action="storeRecipes">
+                <input name="recipe" type="hidden" value=${recipe.recipeId}>
                 <td>${recipe.recipeId}</td>
                 <td>${recipe.recipeName}</td>
                 <td>${recipe.mealType}</td>
+                <td><input type="submit" value="Add to Grocery List"</td>
             </tr>
+        </form>
         </c:forEach>
+
 
         </tbody>
     </table>
