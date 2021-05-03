@@ -11,6 +11,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 //SET @@global.time_zone = '-05:00';
+//SET time_zone = '-05:00';
+        //SET @@session.time_zone = '-05:00';
 class RecipeDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
     RecipeDao dao;

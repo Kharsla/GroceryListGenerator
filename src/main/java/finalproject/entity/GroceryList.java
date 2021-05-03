@@ -1,5 +1,8 @@
 package finalproject.entity;
 
+import finalproject.persistence.GenericDao;
+
+import javax.servlet.http.Cookie;
 import java.util.*;
 
 public class GroceryList {
@@ -20,7 +23,29 @@ public class GroceryList {
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
     }
-    
+
+
+    public List<Integer> getRecipeIdsFromCookies(String cookie) {
+        String[] StringOfIDs = cookie.split("|");
+        List<Integer> recipeIDs = new ArrayList<Integer>();
+
+        for(String id : StringOfIDs) {
+            recipeIDs.add(Integer.parseInt(id));
+        }
+        return recipeIDs;
+    }
+
+    public List<Recipe> getRecipes(List<Integer> recipeIds) {
+        List<Recipe> recipes = new ArrayList<Recipe>();
+        GenericDao recipeDao = new GenericDao(Recipe.class);
+        Recipe recipe = new Recipe();
+
+        for(int id : recipeIds){
+            recipe = (Recipe)recipeDao.getById(id);
+            recipes.add(recipe);
+        }
+        return recipes;
+    }
 
     public List<Ingredient> getIngredientsFromRecipes(List<Recipe> recipes) {
         List<Ingredient> groceryList = new ArrayList<Ingredient>();
