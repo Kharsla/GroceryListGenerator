@@ -1,33 +1,9 @@
-[ERROR] 2021-04-24 18:01:27.476 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:39:42.852 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:40:13.371 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:43:12.582 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:45:18.046 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:46:14.683 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:50:49.825 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 16:53:04.130 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[INFO ] 2021-04-25 16:53:05.112 [main] RecipeDaoTest - [finalproject.entity.Recipe@37d28938]
-[ERROR] 2021-04-25 16:58:26.781 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[ERROR] 2021-04-25 17:00:17.866 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[INFO ] 2021-04-25 17:00:18.817 [main] RecipeDaoTest - 1
-[ERROR] 2021-04-25 17:05:21.042 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
-[INFO ] 2021-04-25 17:05:22.059 [main] RecipeDaoTest - 1
-[INFO ] 2021-05-01 19:25:32.118 [http-nio-8080-exec-6] displayRecipes - student
-[INFO ] 2021-05-01 19:29:10.198 [http-nio-8080-exec-6] displayRecipes - student
-[INFO ] 2021-05-01 19:51:48.128 [http-nio-8080-exec-6] displayRecipes - student
-[INFO ] 2021-05-02 16:51:19.995 [http-nio-8080-exec-9] addRecipe - line 35
-[INFO ] 2021-05-02 16:51:20.001 [http-nio-8080-exec-9] addRecipe - line 37
-[INFO ] 2021-05-02 16:51:20.007 [http-nio-8080-exec-9] addRecipe - line 40
-[INFO ] 2021-05-02 16:51:22.071 [http-nio-8080-exec-9] addRecipe - User{userName='student', password='student', userId=1}
-[INFO ] 2021-05-02 16:51:22.165 [http-nio-8080-exec-9] addRecipe - finalproject.entity.Ingredient@495e372
-[INFO ] 2021-05-02 16:56:57.456 [http-nio-8080-exec-9] addRecipe - line 35
-[INFO ] 2021-05-02 16:56:57.462 [http-nio-8080-exec-9] addRecipe - line 37
-[INFO ] 2021-05-02 16:56:57.463 [http-nio-8080-exec-9] addRecipe - line 40
-[INFO ] 2021-05-02 16:56:59.180 [http-nio-8080-exec-9] addRecipe - User{userName='student', password='student', userId=1}
-[INFO ] 2021-05-02 16:56:59.235 [http-nio-8080-exec-9] addRecipe - Recipe{recipeId=0, recipeName='My Test Recipe', mealType='Breakfast', ingredients=[], user=User{userName='student', password='student', userId=1}}
-[INFO ] 2021-05-02 16:56:59.961 [http-nio-8080-exec-9] addRecipe - finalproject.entity.Ingredient@ea942fc
-[INFO ] 2021-05-02 18:30:36.443 [http-nio-8080-exec-9] storeRecipes - 1
-[INFO ] 2021-05-02 18:31:34.670 [http-nio-8080-exec-2] storeRecipes - 1 | 3
-[INFO ] 2021-05-02 18:35:17.664 [http-nio-8080-exec-7] storeRecipes - 1 | 33
-[INFO ] 2021-05-02 18:38:48.086 [http-nio-8080-exec-10] storeRecipes - 1
-[INFO ] 2021-05-02 18:38:57.164 [http-nio-8080-exec-3] storeRecipes - 1|4
+[INFO ] 2021-05-08 12:06:48.824 [http-nio-8080-exec-6] addUser - mellow
+[INFO ] 2021-05-08 12:06:48.839 [http-nio-8080-exec-6] addUser - mellow
+[INFO ] 2021-05-08 12:10:10.411 [http-nio-8080-exec-6] addUser - mycat
+[INFO ] 2021-05-08 12:10:10.417 [http-nio-8080-exec-6] addUser - mycat
+[INFO ] 2021-05-08 12:15:05.506 [http-nio-8080-exec-10] storeRecipes - 35
+[INFO ] 2021-05-08 12:16:07.605 [http-nio-8080-exec-6] FilterRecipes - 10
+[INFO ] 2021-05-08 12:16:07.638 [http-nio-8080-exec-6] FilterRecipes - {mealType=lunch}
+[INFO ] 2021-05-08 12:16:14.377 [http-nio-8080-exec-10] FilterRecipes - 10
+[INFO ] 2021-05-08 12:16:14.414 [http-nio-8080-exec-10] FilterRecipes - {mealType=breakfast}

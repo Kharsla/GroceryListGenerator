@@ -4,6 +4,7 @@
 <head>
     <title>Sucessfully Added Recipe</title>
 </head>
+<%@include file="navbar.jsp"%>
 <body>
 <h1>The following recipe has been added to your List:</h1>
 <p>${recipe.recipeName}</p>

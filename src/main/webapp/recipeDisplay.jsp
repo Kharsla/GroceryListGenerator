@@ -2,6 +2,7 @@
 
 <html>
 <body>
+<%@include file="navbar.jsp"%>
 <div>
     <h2>Recipes </h2>
    <table id="recipeTable">
@@ -12,12 +13,13 @@
         </thead>
         <tbody>
         <form method="post" action="filterRecipes">
-            <input id="search" name="search">
+            <input type="text" id="search" name="search">
             <select name="filter" id="filter">
-                <option value="Breakfast">Breakfast</option>
-                <option value="Lunch">Lunch</option>
-                <option value="Dinner">Dinner</option>
-                <option value="Snack">Snack</option>
+                <option value=""> </option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
             </select>
             <input type="submit" value="Search">
         </form>
@@ -31,7 +33,9 @@
             </tr>
         </form>
         </c:forEach>
-
+        <form method="post" action="GenerateGroceryList">
+            <input type="submit" value="Generate GroceryList">
+        </form>
 
         </tbody>
     </table>

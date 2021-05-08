@@ -17,6 +17,7 @@
         <mapping class="finalproject.entity.Recipe"/>
         <mapping class="finalproject.entity.User"/>
         <mapping class="finalproject.entity.Ingredient"/>
+        <mapping class="finalproject.entity.Role"/>
     </session-factory>
 </hibernate-configuration>
 

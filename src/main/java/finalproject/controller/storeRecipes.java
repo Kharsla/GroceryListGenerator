@@ -42,7 +42,7 @@ public class storeRecipes extends HttpServlet {
             cookie = new Cookie("recipes", recipeId);
         } else {
             String cookieValue = cookie.getValue();
-            String updatedStringForCookie = cookieValue + "|" + recipeId;
+            String updatedStringForCookie = cookieValue + "-" + recipeId;
             cookie.setValue(updatedStringForCookie);
         }
         logger.info(cookie.getValue());

@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<%@include file="navbar.jsp"%>
 <form method="get" action="displayRecipes">
 <input type="submit">
 <a href="addNewRecipe.jsp">Add New Recipe</a>

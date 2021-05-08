@@ -26,7 +26,7 @@ public class GroceryList {
 
 
     public List<Integer> getRecipeIdsFromCookies(String cookie) {
-        String[] StringOfIDs = cookie.split("|");
+        String[] StringOfIDs = cookie.split("-");
         List<Integer> recipeIDs = new ArrayList<Integer>();
 
         for(String id : StringOfIDs) {

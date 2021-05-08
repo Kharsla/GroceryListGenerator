@@ -12,7 +12,7 @@
     <title>Add A New Recipe</title>
 </head>
 <body>
-
+<%@include file="navbar.jsp"%>
 <form method="post" action="addRecipe">
     <label for="recipeName">RecipeName:</label><br>
     <input type="text" id="recipeName" name="recipeName"><br>
@@ -20,10 +20,10 @@
     <label for="mealType">Type of Meal:</label>
 
     <select name="mealType" id="mealType">
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Dinner">Dinner</option>
-        <option value="Snack">Snack</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snack">Snack</option>
     </select>
    <br/>
     <label>Ingredient</label>

@@ -31,19 +31,22 @@ public class FilterRecipes extends HttpServlet {
         List<Recipe> recipes = new ArrayList<>();
         User user = users.get(0);
         HashMap<String, String> searchCriteria = new HashMap<>();
-        searchCriteria.put("userName", user.getUserName());
+        logger.info(user.getUserId());
+        String searchTerm = req.getParameter("search");
+        String filterTerm = req.getParameter("filter");
 
-        if (req.getParameterMap().containsKey("search")) {
-            String searchTerm = req.getParameter("search");
-            searchCriteria.put("recipeName", searchTerm);
-            recipes = recipeDao.getByMultipleCriteria(searchCriteria);
+        if(searchTerm != "") {
+            String querySearch = "%" + searchTerm + "%";
+            searchCriteria.put("recipeName", querySearch);
         }
-        if (req.getParameterMap().containsKey("filter")) {
-            String filterTerm = req.getParameter("filer");
+
+
+        if (filterTerm != "") {
             searchCriteria.put("mealType", filterTerm);
-
-            recipes = recipeDao.getByMultipleCriteria(searchCriteria);
         }
+
+            recipes = recipeDao.getByMultipleCriteria(user,searchCriteria);
+        logger.info(searchCriteria);
         req.setAttribute("recipes", recipes);
         RequestDispatcher dispatcher = req.getRequestDispatcher("recipeDisplay.jsp");
 

@@ -11,13 +11,13 @@
     <title>Sign Up</title>
 </head>
 <body>
-<form method="get" action="signup">
+<form method="post" action="addUser">
     <label for="username">UserName:</label>
     <input type="text" id="username" name="username"><br>
     <label for="password1">Password:</label>
-    <input type="text" id="password1" name="password1"><br>
+    <input type="password" id="password1" name="password1"><br>
     <label for="password2">Re-Enter Password:</label>
-    <input type="text" id="password2" name="password2"><br>
+    <input type="password" id="password2" name="password2"><br>
     <input type="submit"/>
 </form>
 </body>

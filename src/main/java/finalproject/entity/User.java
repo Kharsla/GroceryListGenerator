@@ -1,6 +1,8 @@
 package finalproject.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,9 +27,13 @@ import java.util.Set;
         private int userId;
 
 
-
-        @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//https://stackoverflow.com/questions/4334970/hibernate-throws-multiplebagfetchexception-cannot-simultaneously-fetch-multipl
+        @LazyCollection(LazyCollectionOption.FALSE)
+        @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<Recipe> recipes = new ArrayList<>();
+        @LazyCollection(LazyCollectionOption.FALSE)
+        @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Role> roles = new ArrayList<>();
 
         public User() {
         }
