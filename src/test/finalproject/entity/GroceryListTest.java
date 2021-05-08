@@ -1,12 +1,10 @@
 package finalproject.entity;
 
-import finalproject.persistence.UserDao;
+import finalproject.persistence.GenericDao;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,8 +15,8 @@ class GroceryListTest {
         List<Recipe> recipes = new ArrayList<Recipe>();
         List<Ingredient> ingredients = new ArrayList<Ingredient>();
         User user = new User();
-        UserDao userDao = new UserDao();
-        user = userDao.getById(1);
+        GenericDao userDao = new GenericDao(User.class);
+        user = (User)userDao.getById(1);
         recipes = user.getRecipes();
         ingredients = newList.getIngredientsFromRecipes(recipes);
 

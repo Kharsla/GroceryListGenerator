@@ -27,6 +27,7 @@ public class storeRecipes extends HttpServlet {
         String recipeId = req.getParameter("recipe");
         Cookie[] cookies = req.getCookies();
         GenericDao recipeDao = new GenericDao(Recipe.class);
+        Recipe recipe = (Recipe)recipeDao.getById(Integer.parseInt(recipeId));
         Cookie cookie = null;
 
         if(cookies != null) {
@@ -47,7 +48,7 @@ public class storeRecipes extends HttpServlet {
         }
         logger.info(cookie.getValue());
         resp.addCookie(cookie);
-        req.setAttribute("recipes", recipeId);
+        req.setAttribute("recipe", recipe);
         RequestDispatcher dispatcher = req.getRequestDispatcher("addSuccess.jsp");
 
         dispatcher.forward(req, resp);

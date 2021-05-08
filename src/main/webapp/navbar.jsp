@@ -15,7 +15,8 @@
 <a href="index.jsp">Home</a>
 <a href="<%=request.getContextPath()%>/displayRecipes">All Recipes</a>
 <a href="addNewRecipe.jsp">Add New Recipe</a>
-<a href="groceryListDisplay.jsp">My Grocery List</a>
+<a href="<%=request.getContextPath()%>/DisplayGeneratorRecipes">Recipes for GroceryList</a>
+<a href="<%=request.getContextPath()%>/GenerateGroceryList">My Grocery List</a>
 
 </body>
 </html>

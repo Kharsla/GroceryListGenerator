@@ -25,7 +25,7 @@ public class GenerateGroceryList extends HttpServlet {
     GroceryList groceryList = new GroceryList();
     String cookieIds;
 
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Cookie[] cookies = req.getCookies();
         Cookie cookie = null;
 
@@ -38,21 +38,22 @@ public class GenerateGroceryList extends HttpServlet {
                 }
 
             }
+
         }
-        if(cookies == null) {
+        if(cookie == null) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("noRecipesError.jsp");
+            dispatcher.forward(req, resp);
+        } else {
+            List<Integer> recipeIds = groceryList.getRecipeIdsFromCookies(cookieIds);
+            List<Recipe> recipes = groceryList.getRecipes(recipeIds);
+            List<Ingredient> ingredients = groceryList.getIngredientsFromRecipes(recipes);
+
+            req.setAttribute("ingredients", ingredients);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("groceryListDisplay.jsp");
+
             dispatcher.forward(req, resp);
         }
 
-        List<Integer> recipeIds = groceryList.getRecipeIdsFromCookies(cookieIds);
-        List<Recipe> recipes = groceryList.getRecipes(recipeIds);
-        List<Ingredient> ingredients = groceryList.getIngredientsFromRecipes(recipes);
-
-        req.setAttribute("ingredients", ingredients);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("groceryListDisplay.jsp");
-
-
-        dispatcher.forward(req, resp);
 
     }
 }

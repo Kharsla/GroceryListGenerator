@@ -28,7 +28,6 @@ public class GenericDao<T> {
 
     /**
      * Constructior for Generic Dao
-     *
      * @param type type of entity
      */
     public GenericDao(Class<T> type) {
@@ -37,7 +36,6 @@ public class GenericDao<T> {
 
     /**
      * Gets all entities
-     *
      * @return all entities
      */
     public List<T> getAll() {
@@ -56,7 +54,6 @@ public class GenericDao<T> {
 
     /**
      * Deletes the entity.
-     *
      * @param entity entity that will be deleted
      */
     public void delete(T entity) {
@@ -82,7 +79,6 @@ public class GenericDao<T> {
 
     /**
      * Inserts the entity.
-     *
      * @param entity entity that will be inserted
      */
     public int insert(T entity) {
@@ -97,7 +93,6 @@ public class GenericDao<T> {
 
     /**
      * updates the entity.
-     *
      * @param entity entity that will be updated
      */
     public void saveOrUpdate(T entity) {
@@ -151,7 +146,5 @@ public class GenericDao<T> {
 
         return session.createQuery(query).getResultList();
     }
-
-
 
 }

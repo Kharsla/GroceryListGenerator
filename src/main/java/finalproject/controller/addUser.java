@@ -1,17 +1,13 @@
 package finalproject.controller;
 
-import finalproject.entity.Recipe;
 import finalproject.entity.Role;
 import finalproject.entity.User;
 import finalproject.persistence.GenericDao;
-import finalproject.persistence.UserDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -48,10 +44,10 @@ public class addUser extends HttpServlet {
             role.setUserName(user.getUserName());
             role.setRoleName("admin");
             roleDao.insert(role);
-            dispatcher = req.getRequestDispatcher("addSuccess.jsp");
+            dispatcher = req.getRequestDispatcher("addUserSuccess.jsp");
         } else {
             //Will change once new jsp made
-            dispatcher = req.getRequestDispatcher("loginError.jsp");
+            dispatcher = req.getRequestDispatcher("signupError.jsp");
         }
 
         dispatcher.forward(req, resp);

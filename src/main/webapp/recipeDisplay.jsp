@@ -2,6 +2,7 @@
 
 <html>
 <body>
+<%@include file="head.jsp"%>
 <%@include file="navbar.jsp"%>
 <div>
     <h2>Recipes </h2>

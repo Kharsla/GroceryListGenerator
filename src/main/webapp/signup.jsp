@@ -7,9 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Sign Up</title>
-</head>
+<%@include file="head.jsp"%>
 <body>
 <form method="post" action="addUser">
     <label for="username">UserName:</label>

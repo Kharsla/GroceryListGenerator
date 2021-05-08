@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: student
-  Date: 5/7/21
-  Time: 5:17 PM
+  Date: 5/8/21
+  Time: 1:26 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="head.jsp"%>
-<%@include file="navbar.jsp"%>
 <body>
-<h1>You have Not added any Recipes for your Grocery List. Please add Recipes and try again.</h1>
+<h1>Your Passwords did not match. Click <a href="signup.jsp">here</a> to try again</h1>
+
 </body>
 </html>

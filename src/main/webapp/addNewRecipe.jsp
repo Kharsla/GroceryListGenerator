@@ -8,31 +8,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Add A New Recipe</title>
-</head>
+<%@include file="head.jsp"%>
 <body>
 <%@include file="navbar.jsp"%>
 <form method="post" action="addRecipe">
-    <label for="recipeName">RecipeName:</label><br>
-    <input type="text" id="recipeName" name="recipeName"><br>
-
+    <div class="form-group">
+    <label for="recipeName">RecipeName:</label>
+    <input type="text" id="recipeName" name="recipeName" required>
+    </div>
+    <div class="form-group">
+        <div class="row">
     <label for="mealType">Type of Meal:</label>
-
-    <select name="mealType" id="mealType">
+    <select  class="form-control" class="col-md-3" name="mealType" id="mealType">
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
         <option value="snack">Snack</option>
     </select>
-   <br/>
-    <label>Ingredient</label>
-    <label>Quantity</label>
-    <label>Unit of Measure</label>
-    <br/>
-    <div id="container">
-    <input type="text" class="ingredient" name="ingredient"><br/>
-    <INPUT name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md">
+                <label>Ingredient</label>
+            </div>
+            <div class="col-md">
+                <label>Quantity</label>
+            </div>
+            <div class="col-md">
+                <label>Unit of Measure</label>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md">
+    <input type="text"  class="form-control" class="ingredient" name="ingredient" required>
+        </div>
+        <div class="col-md">
+    <input name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6" required>
+        </div>
+        <div class="col-md">
     <select name="unitOfMeasure" class="unitOfMeasure">
         <option value="Each">Each</option>
         <option value="cup">cup</option>
@@ -40,10 +54,12 @@
         <option value="grams">g</option>
         <option value="tbsp">Tbsp</option>
     </select>
+        </div>
+    </div>
  </div>
-<input type="submit" Value="submit">
+<input class="btn btn-primary" type="submit" Value="submit">
 </form>
-<button id="btn">Add row</button>
+<button id="btn" class="btn btn-primary">Add row</button>
 </body>
 </html>
 
@@ -59,8 +75,8 @@ count++;
 function addNewRow(count){
 var newrow=
     '<br/>' +
-    '<input type="text" class="ingredient" name="ingredient"><br/>' +
-    '<INPUT name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6">' +
+    '<input type="text" class="ingredient" name="ingredient" required><br/>' +
+    '<INPUT name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6" required>' +
     '<select name="unitOfMeasure" class="unitOfMeasure">' +
                 '<option value="Each">Each</option>' +
                 '<option value="cup">cup</option>' +

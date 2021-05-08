@@ -7,3 +7,29 @@
 [INFO ] 2021-05-08 12:16:07.638 [http-nio-8080-exec-6] FilterRecipes - {mealType=lunch}
 [INFO ] 2021-05-08 12:16:14.377 [http-nio-8080-exec-10] FilterRecipes - 10
 [INFO ] 2021-05-08 12:16:14.414 [http-nio-8080-exec-10] FilterRecipes - {mealType=breakfast}
+[INFO ] 2021-05-08 13:32:04.337 [http-nio-8080-exec-6] addUser - kaitlyn
+[INFO ] 2021-05-08 13:32:04.341 [http-nio-8080-exec-6] addUser - kaitly
+[INFO ] 2021-05-08 13:32:16.615 [http-nio-8080-exec-2] addUser - kaitlyn
+[INFO ] 2021-05-08 13:32:16.618 [http-nio-8080-exec-2] addUser - kaitlyn
+[INFO ] 2021-05-08 13:35:36.913 [http-nio-8080-exec-6] storeRecipes - 37
+[INFO ] 2021-05-08 13:35:52.468 [http-nio-8080-exec-5] storeRecipes - 37-1
+[INFO ] 2021-05-08 13:51:23.361 [http-nio-8080-exec-7] addUser - blahblah
+[INFO ] 2021-05-08 13:51:23.371 [http-nio-8080-exec-7] addUser - blahblah
+[INFO ] 2021-05-08 13:58:10.083 [http-nio-8080-exec-7] storeRecipes - 1
+[INFO ] 2021-05-08 13:58:48.792 [http-nio-8080-exec-6] storeRecipes - 1-3
+[INFO ] 2021-05-08 13:58:52.784 [http-nio-8080-exec-5] storeRecipes - 1-3-36
+[INFO ] 2021-05-08 14:01:24.891 [http-nio-8080-exec-1] storeRecipes - 1-3-36-1
+[INFO ] 2021-05-08 14:01:29.944 [http-nio-8080-exec-10] storeRecipes - 1-3-36-1-37
+[INFO ] 2021-05-08 14:09:04.699 [http-nio-8080-exec-9] storeRecipes - 1
+[INFO ] 2021-05-08 14:09:11.545 [http-nio-8080-exec-3] storeRecipes - 1-37
+[INFO ] 2021-05-08 14:18:24.747 [http-nio-8080-exec-8] storeRecipes - 1
+[INFO ] 2021-05-08 14:18:29.594 [http-nio-8080-exec-1] storeRecipes - 1-37
+[INFO ] 2021-05-08 15:24:11.092 [http-nio-8080-exec-9] storeRecipes - 1
+[INFO ] 2021-05-08 15:24:22.700 [http-nio-8080-exec-7] storeRecipes - 1-3
+[INFO ] 2021-05-08 15:24:27.143 [http-nio-8080-exec-2] storeRecipes - 1-3-37
+[INFO ] 2021-05-08 16:03:28.604 [http-nio-8080-exec-3] storeRecipes - 1
+[ERROR] 2021-05-08 16:55:34.690 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`ingredients`, CONSTRAINT `ingredients_ibfk_1` FOREIGN KEY (`recipeId`) REFERENCES `recipes` (`recipeId`))
+[ERROR] 2021-05-08 17:03:50.630 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`role`, CONSTRAINT `role_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`))
+[ERROR] 2021-05-08 17:04:41.844 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`role`, CONSTRAINT `role_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`))
+[ERROR] 2021-05-08 17:07:11.146 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`role`, CONSTRAINT `role_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`))
+[ERROR] 2021-05-08 17:10:28.565 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`GroceryListGenerator`.`role`, CONSTRAINT `role_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`))
