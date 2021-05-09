@@ -4,42 +4,42 @@
 <body>
 <%@include file="head.jsp"%>
 <%@include file="navbar.jsp"%>
-<div>
-    <h2>Recipes </h2>
-   <table id="recipeTable">
-        <thead>
-        <th>Recipe </th>
-        <th>Recipe Name </th>
-        <th>Meal Type </th>
-        </thead>
-        <tbody>
-        <form method="post" action="filterRecipes">
-            <input type="text" id="search" name="search">
-            <select name="filter" id="filter">
-                <option value=""> </option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="snack">Snack</option>
-            </select>
-            <input type="submit" value="Search">
-        </form>
-        <c:forEach var="recipe" items="${recipes}">
-        <form method="post" action="storeRecipes">
-                <input name="recipe" type="hidden" value=${recipe.recipeId}>
-                <td>${recipe.recipeId}</td>
-                <td>${recipe.recipeName}</td>
-                <td>${recipe.mealType}</td>
-                <td><input type="submit" value="Add to Grocery List"></td>
-            </tr>
-        </form>
-        </c:forEach>
-        <form method="post" action="GenerateGroceryList">
-            <input type="submit" value="Generate GroceryList">
-        </form>
-
-        </tbody>
-    </table>
+<div class="container">
+   <h2>Recipes </h2>
+   <div class="row">
+       <form method="post" action="filterRecipes">
+           <input type="text" id="search" name="search" placeholder="Search by Name">
+           <label for="filter">Meal Type</label>
+           <select name="filter" id="filter">
+               <option value=""> </option>
+               <option value="breakfast">Breakfast</option>
+               <option value="lunch">Lunch</option>
+               <option value="dinner">Dinner</option>
+               <option value="snack">Snack</option>
+           </select>
+           <input type="submit" value="Filter" class="btn btn-secondary">
+       </form>
+   </div>
+   <div class="row">
+       <table id="recipeTable" class="table">
+            <thead>
+                <th>Recipe</th>
+                <th>Meal Type</th>
+            </thead>
+            <tbody>
+            <c:forEach var="recipe" items="${recipes}">
+                <tr>
+                    <form method="post" action="storeRecipes">
+                        <input name="recipe" type="hidden" value=${recipe.recipeId}>
+                        <td>${recipe.recipeName}</td>
+                        <td>${recipe.mealType}</td>
+                        <td><input type="submit" class="btn btn-secondary" value="Add to Grocery List"></td>
+                    </form>
+                </tr>
+            </c:forEach>
+            </tbody>
+       </table>
+   </div>
 </div>
 </body>
 </html>

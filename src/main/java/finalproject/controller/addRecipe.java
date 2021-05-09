@@ -1,6 +1,5 @@
 package finalproject.controller;
 
-import com.mchange.v1.identicator.IdList;
 import finalproject.entity.Ingredient;
 import finalproject.entity.Recipe;
 import finalproject.entity.User;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 @WebServlet(

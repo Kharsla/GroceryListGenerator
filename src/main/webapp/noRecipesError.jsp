@@ -10,6 +10,8 @@
 <%@include file="head.jsp"%>
 <%@include file="navbar.jsp"%>
 <body>
+<div class="container">
 <h1>You have Not added any Recipes for your Grocery List. Please add Recipes and try again.</h1>
+</div>
 </body>
 </html>

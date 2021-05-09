@@ -9,7 +9,9 @@
 <html>
 <%@include file="head.jsp"%>
 <body>
+<div class="container">
 <h1>Congrats! You have successfully created an account. Click <a href="index.jsp">here</a> to login</h1>
+</div>
 
 </body>
 </html>

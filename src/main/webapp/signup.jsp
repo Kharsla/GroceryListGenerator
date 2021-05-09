@@ -9,6 +9,7 @@
 <html>
 <%@include file="head.jsp"%>
 <body>
+<div class="container">
 <form method="post" action="addUser">
     <label for="username">UserName:</label>
     <input type="text" id="username" name="username"><br>
@@ -18,5 +19,6 @@
     <input type="password" id="password2" name="password2"><br>
     <input type="submit"/>
 </form>
+</div>
 </body>
 </html>

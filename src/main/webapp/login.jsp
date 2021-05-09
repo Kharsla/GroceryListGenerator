@@ -9,6 +9,7 @@
 <html>
 <%@include file="head.jsp"%>
 <body>
+    <h1>Grocery List Generator</h1>
 <FORM ACTION="j_security_check" METHOD="POST">
     <TABLE>
         <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
@@ -16,6 +17,7 @@
         <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
     </TABLE>
 </FORM>
+
 <p>Don't have an account? Sign up <a href="signup.jsp">here</a></p>
 </body>
 </html>

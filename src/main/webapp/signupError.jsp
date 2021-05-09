@@ -9,7 +9,8 @@
 <html>
 <%@include file="head.jsp"%>
 <body>
+<div class="container">
 <h1>Your Passwords did not match. Click <a href="signup.jsp">here</a> to try again</h1>
-
+</div>
 </body>
 </html>

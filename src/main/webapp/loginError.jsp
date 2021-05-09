@@ -9,6 +9,9 @@
 <html>
 <%@include file="head.jsp"%>
 <body>
-Try Again
+<div class="container">
+<p>Login failed please try again.</p>
+<a href="index.jsp">Back to Sign in</a>
+</div>
 </body>
 </html>

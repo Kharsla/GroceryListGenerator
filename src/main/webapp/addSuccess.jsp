@@ -4,9 +4,8 @@
 <%@include file="head.jsp"%>
 <%@include file="navbar.jsp"%>
 <body>
-<h1>The following recipe has been added to your List:</h1>
-<p>${recipe.recipeName}</p>
-<p>${recipe.mealType}</p>
-
+<div class="container">
+<h1>The following recipe has been added to your List:${recipe.recipeName}</h1>
+</div>
 </body>
 </html>

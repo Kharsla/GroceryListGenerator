@@ -2,25 +2,27 @@
 
 <html>
 <%@include file="head.jsp"%>
+<%@include file="navbar.jsp"%>
 <body>
-<div>
-    <h2>Recipes </h2>
-    <form method="get" action="GenerateGroceryList">
-        <input type="submit" value="Generate My GroceryList">
-    </form>
-
-    <table id="ingredientTable">
+<div class="container">
+    <div class="col-md-6">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="2">My Grocery List</th>
+        </tr>
+        </thead>
         <tbody>
         <c:forEach var="ingredient" items="${ingredients}">
-                <td>${ingredient.quantity}</td>
-                <td>${ingredient.unitOfMeasure}</td>
+            <tr>
+                <td>${ingredient.quantity}  ${ingredient.unitOfMeasure}</td>
                 <td>${ingredient.ingredientName}</td>
             </tr>
         </c:forEach>
-
-
         </tbody>
     </table>
+    </div>
+    </div>
 </div>
 </body>
 </html>

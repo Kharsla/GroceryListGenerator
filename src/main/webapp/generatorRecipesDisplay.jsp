@@ -9,11 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="head.jsp"%>
+<%@include file="navbar.jsp"%>
 <body>
+<div class="container">
+<h1>Recipes for the Generator</h1>
+<ul>
 <c:forEach var="recipe" items="${recipes}">
-        <td>${recipe.recipeId}</td>
-        <td>${recipe.recipeName}</td>
-        <td>${recipe.mealType}</td>
+        <li>${recipe.recipeName}</li>
 </c:forEach>
+</ul>
+</div>
 </body>
 </html>

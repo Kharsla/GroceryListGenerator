@@ -46,7 +46,6 @@ public class addUser extends HttpServlet {
             roleDao.insert(role);
             dispatcher = req.getRequestDispatcher("addUserSuccess.jsp");
         } else {
-            //Will change once new jsp made
             dispatcher = req.getRequestDispatcher("signupError.jsp");
         }
 

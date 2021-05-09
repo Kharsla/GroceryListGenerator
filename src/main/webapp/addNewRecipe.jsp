@@ -9,8 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="head.jsp"%>
-<body>
 <%@include file="navbar.jsp"%>
+<body>
+<div class="container">
 <form method="post" action="addRecipe">
     <div class="form-group">
     <label for="recipeName">RecipeName:</label>
@@ -19,7 +20,7 @@
     <div class="form-group">
         <div class="row">
     <label for="mealType">Type of Meal:</label>
-    <select  class="form-control" class="col-md-3" name="mealType" id="mealType">
+    <select  class="form-select form-select-sm" name="mealType" id="mealType">
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
@@ -27,7 +28,7 @@
     </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="container">
         <div class="row">
             <div class="col-md">
                 <label>Ingredient</label>
@@ -59,7 +60,8 @@
  </div>
 <input class="btn btn-primary" type="submit" Value="submit">
 </form>
-<button id="btn" class="btn btn-primary">Add row</button>
+<button id="btn" class="btn btn-primary">Add more ingredients</button>
+</div>
 </body>
 </html>
 
@@ -74,16 +76,23 @@ count++;
 
 function addNewRow(count){
 var newrow=
-    '<br/>' +
-    '<input type="text" class="ingredient" name="ingredient" required><br/>' +
-    '<INPUT name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6" required>' +
-    '<select name="unitOfMeasure" class="unitOfMeasure">' +
+    '<div class="row">' +
+        '<div class="col-md">' +
+            '<input type="text"  class="form-control" class="ingredient" name="ingredient" required>' +
+        '</div>' +
+        '<div class="col-md">' +
+            '<input name="quantity" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6" required>' +
+        '</div>' +
+        '<div class="col-md">' +
+            '<select name="unitOfMeasure" class="unitOfMeasure">' +
                 '<option value="Each">Each</option>' +
                 '<option value="cup">cup</option>' +
                 '<option value="mL">mL</option>' +
                 '<option value="grams">g</option>' +
                 '<option value="tbsp">Tbsp</option>' +
-            '</select>';
+            '</select>' +
+        '</div>' +
+    '</div>';
 return newrow;
 }
 </script>
