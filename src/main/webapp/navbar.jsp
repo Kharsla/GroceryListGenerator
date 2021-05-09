@@ -10,7 +10,7 @@
 <html>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Grocery List Generator</a>
+    <a class="navbar-brand" href="index.jsp">Grocery List Generator</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,6 +20,7 @@
             <a class="nav-item nav-link" href="addNewRecipe.jsp">Add a New Recipe <span class="sr-only"></span></a>
             <a class="nav-item nav-link" href="<%=request.getContextPath()%>/DisplayGeneratorRecipes"v>Recipes for Grocery List<span class="sr-only"></span></a>
             <a class="nav-item nav-link" href="<%=request.getContextPath()%>/GenerateGroceryList">My Grocery List <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="logout.jsp">Logout <span class="sr-only"></span></a>
         </div>
     </div>
 </nav>

@@ -13,11 +13,11 @@
 <body>
 <div class="container">
 <h1>Recipes for the Generator</h1>
-<ul>
+<table class="table">
 <c:forEach var="recipe" items="${recipes}">
-        <li>${recipe.recipeName}</li>
+        <tr>${recipe.recipeName}</tr>
 </c:forEach>
-</ul>
+</table>
 </div>
 </body>
 </html>

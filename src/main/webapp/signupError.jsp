@@ -10,7 +10,7 @@
 <%@include file="head.jsp"%>
 <body>
 <div class="container">
-<h1>Your Passwords did not match. Click <a href="signup.jsp">here</a> to try again</h1>
+<p>Your Passwords did not match. Click <a href="signup.jsp">here</a> to try again</p>
 </div>
 </body>
 </html>

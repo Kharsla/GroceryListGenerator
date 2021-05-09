@@ -25,6 +25,7 @@
             <thead>
                 <th>Recipe</th>
                 <th>Meal Type</th>
+                <th> </th>
             </thead>
             <tbody>
             <c:forEach var="recipe" items="${recipes}">

@@ -39,3 +39,11 @@
 [INFO ] 2021-05-09 12:41:32.247 [http-nio-8080-exec-3] storeRecipes - 1-43
 [INFO ] 2021-05-09 12:54:29.742 [http-nio-8080-exec-10] storeRecipes - 1
 [INFO ] 2021-05-09 13:02:04.952 [http-nio-8080-exec-9] storeRecipes - 43
+[INFO ] 2021-05-09 15:53:35.077 [http-nio-8080-exec-9] storeRecipes - 1
+[INFO ] 2021-05-09 16:00:41.281 [http-nio-8080-exec-7] storeRecipes - 43
+[INFO ] 2021-05-09 16:23:01.700 [http-nio-8080-exec-4] storeRecipes - 43-44
+[INFO ] 2021-05-09 17:07:46.128 [http-nio-8080-exec-8] addUser - mellow
+[INFO ] 2021-05-09 17:07:46.129 [http-nio-8080-exec-7] addUser - mellow
+[INFO ] 2021-05-09 17:07:46.133 [http-nio-8080-exec-7] addUser - mellow
+[INFO ] 2021-05-09 17:07:46.158 [http-nio-8080-exec-8] addUser - mellow
+[INFO ] 2021-05-09 17:09:09.270 [http-nio-8080-exec-10] storeRecipes - 45

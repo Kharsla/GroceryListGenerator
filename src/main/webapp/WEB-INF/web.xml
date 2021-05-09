@@ -10,11 +10,55 @@
     </form-login-config>
   </login-config>
 
-  <!-- Protect the recipe List page. -->
+  <!-- Protect the index page. -->
    <security-constraint>
     <web-resource-collection>
       <web-resource-name>index</web-resource-name>
       <url-pattern>/index.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- Protect the recipe display page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>recipeDisplay</web-resource-name>
+      <url-pattern>/recipeDisplay.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- Protect the add new recipe page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>addNewRecipe</web-resource-name>
+      <url-pattern>/addNewRecipe.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- Protect the grocery list recipe display page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>generatorRecipesDisplay</web-resource-name>
+      <url-pattern>/generatorRecipesDisplay.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- Protect the grocery list display page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>groceryListDisplay</web-resource-name>
+      <url-pattern>/groceryListDisplay.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
