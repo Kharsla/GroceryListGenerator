@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+/**
+ * This servlet deletes all the cookies for the user selected recipes for the grocery list
+ */
 @WebServlet(
         name = "removeRecipes",
         urlPatterns = { "/removeRecipes" }

@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
+/**
+ * This servlet adds a recipe to the database from the form data
+ */
 
 @WebServlet(
             name = "addRecipe",

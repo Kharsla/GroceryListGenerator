@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
+/**
+ * This servlet displays all the recipes that will be used to generate the grocery list
+ */
 @WebServlet(
         name = "DisplayGeneratorRecipes",
         urlPatterns = { "/DisplayGeneratorRecipes" }

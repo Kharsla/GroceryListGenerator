@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * This servlet filters the users recipes based on criteria given by user input
+ */
+
 @WebServlet(
         name = "filterRecipes",
         urlPatterns = { "/filterRecipes" }

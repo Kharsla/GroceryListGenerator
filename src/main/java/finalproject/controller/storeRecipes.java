@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * This servlet stores the user's selected recipes for the grocery list in the recipes cookie
+ */
 
 @WebServlet(
         name = "storeRecipes",

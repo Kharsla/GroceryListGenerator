@@ -34,43 +34,76 @@ import java.util.Set;
         @LazyCollection(LazyCollectionOption.FALSE)
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<Role> roles = new ArrayList<>();
-
+        /**
+         * Instantiates a new user.
+         */
         public User() {
         }
-
+        /**
+         * Instantiates a new User.
+         * @param userName the name of the recipe
+         * @param password the type of meal
+         */
         public User(String userName, String password) {
             this.userName = userName;
             this.password = password;
         }
-
+        /**
+         * Gets the userName
+         * @return the userName
+         */
         public String getUserName() {
             return userName;
         }
-
+        /**
+         * Sets the userName
+         * @param userName the userName
+         */
         public void setUserName(String userName) {
             this.userName = userName;
         }
 
+        /**
+         * Gets the users password
+         * @return the user password
+         */
         public String getPassword() {
             return password;
         }
-
+        /**
+         * Sets the password
+         * @param password the password
+         */
         public void setPassword(String password) {
             this.password = password;
         }
-
+        /**
+         * Gets the userId
+         * @return the userId
+         */
         public int getUserId() {
             return userId;
         }
+        /**
+         * Sets the userID
+         * @param userId the user id
+         */
 
         public void setUserId(int userId) {
             this.userId = userId;
         }
 
+        /**
+         * Gets the recipes
+         * @return the users recipes
+         */
         public List<Recipe> getRecipes() {
             return recipes;
         }
-
+        /**
+         * Sets the recipes
+         * @param recipes the recipes
+         */
         public void setRecipes(List<Recipe> recipes) {
             this.recipes = recipes;
         }

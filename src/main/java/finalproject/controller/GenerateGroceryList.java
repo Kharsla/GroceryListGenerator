@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+/**
+ * This servlet gets the users chosen recipes for the grocery list, gets all the ingredients for the
+ * recipes and forwards them to display as a grocery list
+ */
 
 @WebServlet(
         name = "GenerateGroceryList",

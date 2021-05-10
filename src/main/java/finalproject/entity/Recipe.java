@@ -77,27 +77,47 @@ public class Recipe {
     public void setMealType(String mealType) {
         this.mealType= mealType;
     }
-
+    /**
+     * Gets user
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets the user
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }
-
+    /**
+     * Gets recipe ID
+     * @return the recipeID
+     */
     public int getRecipeId() {
         return recipeId;
     }
 
+    /**
+     * Sets the recipeId
+     * @param recipeId recipe ID
+     */
     public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }
-
+    /**
+     * Gets ingredients
+     * @return ingredients
+     */
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
-
+    /**
+     * Sets the ingredients
+     * @param ingredients the ingredients
+     */
     public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
