@@ -36,6 +36,10 @@
                         <td>${recipe.mealType}</td>
                         <td><input type="submit" class="btn btn-secondary" value="Add to Grocery List"></td>
                     </form>
+                    <form method="get" action="deleteRecipe">
+                        <input name="recipe" type="hidden" value=${recipe.recipeId}>
+                        <td><input type="submit" class="btn btn-secondary" value="Delete Recipe"></td>
+                    </form>
                 </tr>
             </c:forEach>
             </tbody>

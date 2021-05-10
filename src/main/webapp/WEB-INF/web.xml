@@ -54,6 +54,17 @@
     </auth-constraint>
   </security-constraint>
 
+  <!-- Protect the add success page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>addSuccess</web-resource-name>
+      <url-pattern>/addSuccess.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
   <!-- Protect the grocery list display page. -->
   <security-constraint>
     <web-resource-collection>

@@ -5,7 +5,7 @@
 <%@include file="navbar.jsp"%>
 <body>
 <div class="container">
-<p>The following recipe has been added to your List: ${recipe.recipeName}</p>
+<h1>The following recipe has been added to your List: ${recipe.recipeName}</h1>
 </div>
 </body>
 </html>

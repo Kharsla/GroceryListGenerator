@@ -13,11 +13,13 @@
 <body>
 <div class="container">
 <h1>Recipes for the Generator</h1>
-<table class="table">
+        <form method="get" action="removeRecipes" class="form">
+                <input type="submit" class="btn btn-secondary" value="Remove All Recipes from Grocery List">
+        </form>
 <c:forEach var="recipe" items="${recipes}">
-        <tr>${recipe.recipeName}</tr>
+        <h4>${recipe.recipeName}</h4><br/>
 </c:forEach>
-</table>
+
 </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <%@include file="head.jsp"%>
 <body>
 <div class="container">
-<p>Congrats! You have successfully created an account. Click <a href="index.jsp">here</a> to login</p>
+<h1>Congrats! You have successfully created an account. Click <a href="index.jsp">here</a> to login</h1>
 </div>
 
 </body>

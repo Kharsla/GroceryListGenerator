@@ -5,7 +5,8 @@
 <%@include file="navbar.jsp"%>
 <body>
 <div class="container">
-<p>${recipe.recipeName} was sucessfully added!</p>
+<h1>${recipe.recipeName} was sucessfully added!</h1>
+    <a href="recipeDisplay.jsp">View all recipes</a>
 </div>
 </body>
 </html>

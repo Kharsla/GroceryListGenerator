@@ -11,7 +11,7 @@
 <%@include file="navbar.jsp"%>
 <body>
 <div class="container">
-<p class="mt-4">You have Not added any Recipes for your Grocery List. Please add Recipes and try again.</p>
+<h1 class="mt-4">You have Not added any Recipes for your Grocery List. Please add Recipes and try again.</h1>
 </div>
 </body>
 </html>
