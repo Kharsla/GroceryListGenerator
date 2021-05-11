@@ -36,6 +36,18 @@
 <td>3/26</td>
 <td>Corrected Login after deplyed to AWS and added a jsp to display recipes</td>
 </tr>
+<tr>
+<td>4/4</td>
+<td>Worked on adding a user and recipe 2 hours</td>
+</tr>
+<tr>
+<td>4/40 through 5/2</td>
+<td>Worked on generic dao, recipe display for signed in user, worked on front end forms and backend cookies and Grocery List methods 16 hours</td>
+</tr>
+<tr>
+<td>5/8 and 5/9</td>
+<td>Worked on styling, front end, tested out website and added missing parts, added missing tests 10 hours</td>
+</tr>
 
 </table>
 </html>

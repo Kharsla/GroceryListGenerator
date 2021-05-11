@@ -36,7 +36,9 @@ class GroceryListTest {
         }
 
     }
-
+    /**
+     * Verify successful get Recipe Ids from cookie String
+     */
     @Test
     void getRecipeIdsFromCookiesTest() {
         String fakeCookie = "1-2";
