@@ -28,7 +28,9 @@ class GenericDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
     }
-
+    /**
+     * Verify successful get all
+     */
     @Test
     void getAllSuccess() {
 
@@ -62,7 +64,9 @@ class GenericDaoTest {
         roleDao.delete(roleDao.getById(1));
         assertNull(roleDao.getById(1));
     }
-
+    /**
+     * Verify successful get by ID
+     */
     @Test
     void getByIdSuccess() {
         User user = (User)userDao.getById(1);
@@ -106,7 +110,9 @@ class GenericDaoTest {
         User retrievedUser = (User)userDao.getById(2);
         assertEquals(newUserName, retrievedUser.getUserName());
     }
-
+    /**
+     * Verify successful get by a single criteria
+     */
     @Test
     void getByCriteriaSuccess() {
         String criteria = "mealType";
@@ -115,7 +121,9 @@ class GenericDaoTest {
         assertEquals(2, recipes.size());
 
     }
-
+    /**
+     * Verify successful get by multiple criteria with specific user
+     */
     @Test
     void getByMultipleCriteriaSuccess() {
         HashMap<String,String> searchCriteria = new HashMap<>();

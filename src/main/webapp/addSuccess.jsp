@@ -6,6 +6,7 @@
 <body>
 <div class="container">
 <h1>The following recipe has been added to your List: ${recipe.recipeName}</h1>
+    <a href="<%=request.getContextPath()%>/displayRecipes">Go back to all recipes</a>
 </div>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <body>
 <div class="container">
 <h1>${recipe.recipeName} was sucessfully added!</h1>
-    <a href="recipeDisplay.jsp">View all recipes</a>
+    <a href="<%=request.getContextPath()%>/displayRecipes">Go to all recipes</a>
 </div>
 </body>
 </html>

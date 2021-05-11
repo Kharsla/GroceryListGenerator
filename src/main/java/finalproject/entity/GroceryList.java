@@ -24,7 +24,11 @@ public class GroceryList {
         this.recipes = recipes;
     }
 
-
+    /**
+     * Gets the cookie with recipeIDs as a string and converts and returns to list of recipeIDs
+     * @param cookie recipes cookie
+     * @return list of recipe IDs
+     */
     public List<Integer> getRecipeIdsFromCookies(String cookie) {
         String[] StringOfIDs = cookie.split("-");
         List<Integer> recipeIDs = new ArrayList<Integer>();
@@ -34,7 +38,11 @@ public class GroceryList {
         }
         return recipeIDs;
     }
-
+    /**
+     * takes a list of recipeIDs, gets the recipes by their ID, and returns a list of recipes
+     * @param recipeIds list of recipeIDs
+     * @return list of recipes
+     */
     public List<Recipe> getRecipes(List<Integer> recipeIds) {
         List<Recipe> recipes = new ArrayList<Recipe>();
         GenericDao recipeDao = new GenericDao(Recipe.class);
@@ -46,7 +54,11 @@ public class GroceryList {
         }
         return recipes;
     }
-
+    /**
+     * takes a list of recipes and gets all the ingredients and returns list of ingreidents
+     * @param recipes list of recipes
+     * @return list of ingredients (grocery list)
+     */
     public List<Ingredient> getIngredientsFromRecipes(List<Recipe> recipes) {
         List<Ingredient> groceryList = new ArrayList<Ingredient>();
         for(Recipe nextRecipe: recipes) {
@@ -56,20 +68,5 @@ public class GroceryList {
         return groceryList;
     }
 
-  /** NEED TO CHANGE TO COMBINE ONLY INGREDIENTS WITH LIKE UNITS OF MEASUREMENT
-   * public Set<Ingredient> combineLikeIngredients(Set<Ingredient> groceryList) {
-        private Map<String, Integer> updatedGroceryList new TreeMap<String, Integer>();
-
-        for(Ingredient nextIngredient: groceryList) {
-            if (updatedGroceryList.containsKey(nextIngredient.getIngredientName())) {
-                updatedGroceryList.put(nextIngredient.getIngredientName(), updatedGroceryList.get(nextIngredient) + nextIngredient.getQuantity());
-
-            } else {
-                updatedGroceryList.put(nextIngredient.getIngredientName(), nextIngredient.getQuantity());
-            }
-        }
-
-    }
-   **/
 
 }
