@@ -22,8 +22,13 @@ public class Recipe {
     private String recipeName;
     private String mealType;
 
+
+
     @OneToMany(mappedBy="recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Ingredient> ingredients = new ArrayList<>();
+
+    @OneToMany(mappedBy="recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<GeneratorRecipe> generatorRecipes = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name="userId", nullable=false)
