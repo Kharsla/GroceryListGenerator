@@ -49,7 +49,7 @@ import java.util.*;
                 Ingredient ingredient = new Ingredient();
                 ingredient.setIngredientName(ingredientName.get(i));
                 ingredient.setRecipe(recipe);
-                ingredient.setQuantity(Integer.parseInt(quantities.get(i)));
+                ingredient.setQuantity(Double.parseDouble(quantities.get(i)));
                 ingredient.setUnitOfMeasure(unitOfMeasurements.get(i));
 
                 int ingredientId = ingredientDao.insert(ingredient);

@@ -75,3 +75,6 @@
 [INFO ] 2021-05-09 18:37:39.456 [http-nio-8080-exec-4] storeRecipes - 1
 [INFO ] 2021-05-09 18:37:42.561 [http-nio-8080-exec-5] storeRecipes - 1-44
 [INFO ] 2021-05-09 18:38:00.716 [http-nio-8080-exec-4] storeRecipes - 1-44-43
+[INFO ] 2021-07-10 09:45:48.352 [http-nio-8080-exec-4] addUser - please
+[INFO ] 2021-07-10 09:45:48.375 [http-nio-8080-exec-4] addUser - please
+[INFO ] 2021-07-10 10:59:40.498 [http-nio-8080-exec-5] storeRecipes - 53

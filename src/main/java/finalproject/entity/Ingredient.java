@@ -17,7 +17,7 @@ public class Ingredient {
     private int ingredientId;
 
     private String ingredientName;
-    private int quantity;
+    private double quantity;
     private String unitOfMeasure;
 
     @ManyToOne
@@ -30,7 +30,7 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(int ingredientId, String ingredientName, int quantity, String unitOfMeasure, Recipe recipe) {
+    public Ingredient(int ingredientId, String ingredientName, double quantity, String unitOfMeasure, Recipe recipe) {
         this.ingredientId = ingredientId;
         this.ingredientName = ingredientName;
         this.quantity = quantity;
@@ -70,7 +70,7 @@ public class Ingredient {
      * Gets the quantity
      * @return the quantity
      */
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
     /**
@@ -78,7 +78,7 @@ public class Ingredient {
      * @param quantity the quantity
      */
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
     /**
