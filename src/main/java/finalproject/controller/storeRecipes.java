@@ -1,5 +1,6 @@
 package finalproject.controller;
 
+import finalproject.entity.GeneratorRecipe;
 import finalproject.entity.Recipe;
 import finalproject.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -27,30 +28,14 @@ public class storeRecipes extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String recipeId = req.getParameter("recipe");
-        Cookie[] cookies = req.getCookies();
+        int recipeId = Integer.parseInt(req.getParameter("recipe"));
+        GenericDao generatorRecipeDao = new GenericDao(GeneratorRecipe.class);
+        GeneratorRecipe recipeToAdd = new GeneratorRecipe();
         GenericDao recipeDao = new GenericDao(Recipe.class);
-        Recipe recipe = (Recipe)recipeDao.getById(Integer.parseInt(recipeId));
-        Cookie cookie = null;
+        Recipe recipe = (Recipe)recipeDao.getById(recipeId);
+        recipeToAdd.setRecipe(recipe);
+        generatorRecipeDao.insert(recipeToAdd);
 
-        if(cookies != null) {
-            for (Cookie nextCookie : cookies) {
-                if (nextCookie.getName().equals("recipes")) {
-                    cookie = nextCookie;
-                    break;
-                }
-
-            }
-        }
-        if(cookie == null) {
-            cookie = new Cookie("recipes", recipeId);
-        } else {
-            String cookieValue = cookie.getValue();
-            String updatedStringForCookie = cookieValue + "-" + recipeId;
-            cookie.setValue(updatedStringForCookie);
-        }
-        logger.info(cookie.getValue());
-        resp.addCookie(cookie);
         req.setAttribute("recipe", recipe);
         RequestDispatcher dispatcher = req.getRequestDispatcher("addSuccess.jsp");
 
