@@ -25,10 +25,10 @@ public class Recipe {
 
 
     @OneToMany(mappedBy="recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @OneToMany(mappedBy="recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<GeneratorRecipe> generatorRecipes = new ArrayList<>();
+    private Set<GeneratorRecipe> generatorRecipes = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name="userId", nullable=false)
@@ -116,14 +116,14 @@ public class Recipe {
      * Gets ingredients
      * @return ingredients
      */
-    public List<Ingredient> getIngredients() {
+    public Set<Ingredient> getIngredients() {
         return ingredients;
     }
     /**
      * Sets the ingredients
      * @param ingredients the ingredients
      */
-    public void setIngredients(List<Ingredient> ingredients) {
+    public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
     @Override

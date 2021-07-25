@@ -87,7 +87,7 @@ var newrow=
             '<input type="text"  class="form-control" class="ingredient" name="ingredient" required>' +
         '</div>' +
         '<div class="col-md-3">' +
-            '<input name="quantity" class="form-control" class="quantity" TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0" SIZE="6" required>' +
+            '<input name="quantity" class="form-control" class="quantity" TYPE="NUMBER" MIN="0.0" MAX="100.0" STEP="0.1" VALUE="0" SIZE="6" required>' +
         '</div>' +
         '<div class="col-md-3">' +
             '<select name="unitOfMeasure" class="form-select form-select-sm" class="unitOfMeasure">' +

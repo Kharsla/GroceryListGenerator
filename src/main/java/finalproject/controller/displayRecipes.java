@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
+
 /**
  * This servlet displays all the users recipes
  */
@@ -30,7 +32,7 @@ public class displayRecipes extends HttpServlet {
         GenericDao userDao = new GenericDao(User.class);
         List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
         User user = users.get(0);
-        List<Recipe> recipes = user.getRecipes();
+        Set<Recipe> recipes = user.getRecipes();
 
         req.setAttribute("recipes", recipes);
        RequestDispatcher dispatcher = req.getRequestDispatcher("recipeDisplay.jsp");

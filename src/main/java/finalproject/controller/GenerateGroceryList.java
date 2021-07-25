@@ -1,8 +1,7 @@
 package finalproject.controller;
 
-import finalproject.entity.GroceryList;
-import finalproject.entity.Ingredient;
-import finalproject.entity.Recipe;
+import finalproject.entity.*;
+import finalproject.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
+
 /**
  * This servlet gets the users chosen recipes for the grocery list, gets all the ingredients for the
  * recipes and forwards them to display as a grocery list
@@ -30,28 +31,17 @@ public class GenerateGroceryList extends HttpServlet {
     String cookieIds;
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie[] cookies = req.getCookies();
-        Cookie cookie = null;
-
-        if(cookies != null) {
-            for (Cookie nextCookie : cookies) {
-                if (nextCookie.getName().equals("recipes")) {
-                    cookie = nextCookie;
-                    cookieIds = cookie.getValue();
-                    break;
-                }
-
-            }
-
-        }
-        if(cookie == null) {
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
+        User user = users.get(0);
+        Set<GeneratorRecipe> generatorRecipes = user.getGeneratorRecipes();
+        if(generatorRecipes.isEmpty()) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("noRecipesError.jsp");
             dispatcher.forward(req, resp);
         } else {
-            List<Integer> recipeIds = groceryList.getRecipeIdsFromCookies(cookieIds);
-            List<Recipe> recipes = groceryList.getRecipes(recipeIds);
-            List<Ingredient> ingredients = groceryList.getIngredientsFromRecipes(recipes);
-
+            Set<Recipe> recipes = groceryList.getRecipes(generatorRecipes);
+            Set<Ingredient> unorganizedIngredients = groceryList.getIngredientsFromRecipes(recipes);
+            Set<Ingredient> ingredients = groceryList.combineLikeIngredients(unorganizedIngredients);
             req.setAttribute("ingredients", ingredients);
             RequestDispatcher dispatcher = req.getRequestDispatcher("groceryListDisplay.jsp");
 

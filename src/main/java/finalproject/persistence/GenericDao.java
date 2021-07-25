@@ -14,6 +14,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 /**
  * A generic DAO somewhat inspired by http://rodrigouchoa.wordpress.com
@@ -63,6 +64,7 @@ public class GenericDao<T> {
         transaction.commit();
         session.close();
     }
+
 
     /**
      * Gets an entity by id

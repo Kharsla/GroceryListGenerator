@@ -24,32 +24,14 @@ public class GroceryList {
         this.recipes = recipes;
     }
 
-    /**
-     * Gets the cookie with recipeIDs as a string and converts and returns to list of recipeIDs
-     * @param cookie recipes cookie
-     * @return list of recipe IDs
-     */
-    public List<Integer> getRecipeIdsFromCookies(String cookie) {
-        String[] StringOfIDs = cookie.split("-");
-        List<Integer> recipeIDs = new ArrayList<Integer>();
 
-        for(String id : StringOfIDs) {
-            recipeIDs.add(Integer.parseInt(id));
-        }
-        return recipeIDs;
-    }
-    /**
-     * takes a list of recipeIDs, gets the recipes by their ID, and returns a list of recipes
-     * @param recipeIds list of recipeIDs
-     * @return list of recipes
-     */
-    public List<Recipe> getRecipes(List<Integer> recipeIds) {
-        List<Recipe> recipes = new ArrayList<Recipe>();
-        GenericDao recipeDao = new GenericDao(Recipe.class);
+    public Set<Recipe> getRecipes(Set<GeneratorRecipe> generatorRecipes) {
+        Set<Recipe> recipes = new HashSet<>();
+        GenericDao recipeDao = new GenericDao(GeneratorRecipe.class);
         Recipe recipe = new Recipe();
 
-        for(int id : recipeIds){
-            recipe = (Recipe)recipeDao.getById(id);
+        for(GeneratorRecipe generatorRecipe : generatorRecipes){
+            recipe = generatorRecipe.getRecipe();
             recipes.add(recipe);
         }
         return recipes;
@@ -59,13 +41,33 @@ public class GroceryList {
      * @param recipes list of recipes
      * @return list of ingredients (grocery list)
      */
-    public List<Ingredient> getIngredientsFromRecipes(List<Recipe> recipes) {
-        List<Ingredient> groceryList = new ArrayList<Ingredient>();
+    public Set<Ingredient> getIngredientsFromRecipes(Set<Recipe> recipes) {
+        Set<Ingredient> groceryList = new HashSet<>();
         for(Recipe nextRecipe: recipes) {
-            List<Ingredient> recipeIngredients = nextRecipe.getIngredients();
+            Set<Ingredient> recipeIngredients = nextRecipe.getIngredients();
             groceryList.addAll(recipeIngredients);
         }
         return groceryList;
+    }
+
+    public Set<Ingredient> combineLikeIngredients(Set<Ingredient> groceryList) {
+        Set<Ingredient> organizedGroceryList = new HashSet<>();
+        for(Ingredient nextIngredient: groceryList) {
+            boolean doesExsist = false;
+            for(Ingredient ingredient: organizedGroceryList) {
+                if (nextIngredient.getIngredientName().equals(ingredient.getIngredientName()) && nextIngredient.getUnitOfMeasure().equals(ingredient.getUnitOfMeasure())) {
+                    double newQuantity = nextIngredient.getQuantity() + nextIngredient.getQuantity();
+                    ingredient.setQuantity(newQuantity);
+                    doesExsist = true;
+                    break;
+                }
+            }
+            if(!doesExsist) {
+                organizedGroceryList.add(nextIngredient);
+            }
+
+        }
+        return organizedGroceryList;
     }
 
 

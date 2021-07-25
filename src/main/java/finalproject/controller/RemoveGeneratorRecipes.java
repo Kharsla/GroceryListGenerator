@@ -1,6 +1,9 @@
 package finalproject.controller;
 
+import finalproject.entity.GeneratorRecipe;
 import finalproject.entity.Recipe;
+import finalproject.entity.User;
+import finalproject.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 /**
  * This servlet deletes all the cookies for the user selected recipes for the grocery list
@@ -20,9 +25,18 @@ import java.util.List;
 )
 public class RemoveGeneratorRecipes extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie cookie = new Cookie("recipes", "");
-        cookie.setMaxAge(0);
-        resp.addCookie(cookie);
+        List<GeneratorRecipe> recipesToRemove = new ArrayList<>();
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
+        User user = users.get(0);
+        HashMap<String, String> searchCriteria = new HashMap<>();
+        searchCriteria.put("userId", String.valueOf(user.getUserId()));
+        GenericDao generatorRecipeDao = new GenericDao(GeneratorRecipe.class);
+        recipesToRemove = generatorRecipeDao.getByMultipleCriteria(user, searchCriteria);
+
+        for(GeneratorRecipe recipe: recipesToRemove){
+            generatorRecipeDao.delete(recipe);
+        }
         RequestDispatcher dispatcher = req.getRequestDispatcher("generatorRecipesDisplay.jsp");
 
         dispatcher.forward(req, resp);

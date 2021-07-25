@@ -14,6 +14,9 @@ public class GeneratorRecipe {
     @ManyToOne
     @JoinColumn(name="recipeId", nullable=false)
     private Recipe recipe;
+    @ManyToOne
+    @JoinColumn(name="userId", nullable=false)
+    private User user;
 
     public GeneratorRecipe() {
     }
@@ -37,5 +40,13 @@ public class GeneratorRecipe {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

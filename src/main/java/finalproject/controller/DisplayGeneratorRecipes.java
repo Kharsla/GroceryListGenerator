@@ -1,7 +1,10 @@
 package finalproject.controller;
 
+import finalproject.entity.GeneratorRecipe;
 import finalproject.entity.GroceryList;
 import finalproject.entity.Recipe;
+import finalproject.entity.User;
+import finalproject.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 /**
  * This servlet displays all the recipes that will be used to generate the grocery list
@@ -29,27 +33,15 @@ public class DisplayGeneratorRecipes extends HttpServlet {
     String cookieIds;
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie[] cookies = req.getCookies();
-        Cookie cookie = null;
-
-        if (cookies != null) {
-            for (Cookie nextCookie : cookies) {
-                if (nextCookie.getName().equals("recipes")) {
-                    cookie = nextCookie;
-                    cookieIds = cookie.getValue();
-                    break;
-                }
-
-            }
-
-        }
-        if (cookie == null ) {
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
+        User user = users.get(0);
+        Set<GeneratorRecipe> generatorRecipes = user.getGeneratorRecipes();
+        if (generatorRecipes.isEmpty()) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("noRecipesError.jsp");
             dispatcher.forward(req, resp);
-
         } else {
-            List<Integer> recipeIds = groceryList.getRecipeIdsFromCookies(cookieIds);
-            List<Recipe> recipes = groceryList.getRecipes(recipeIds);
+            Set<Recipe> recipes = groceryList.getRecipes(generatorRecipes);
 
             req.setAttribute("recipes", recipes);
             RequestDispatcher dispatcher = req.getRequestDispatcher("generatorRecipesDisplay.jsp");

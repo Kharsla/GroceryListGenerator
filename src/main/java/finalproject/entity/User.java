@@ -30,10 +30,12 @@ import java.util.Set;
 //https://stackoverflow.com/questions/4334970/hibernate-throws-multiplebagfetchexception-cannot-simultaneously-fetch-multipl
         @LazyCollection(LazyCollectionOption.FALSE)
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
-        private List<Recipe> recipes = new ArrayList<>();
+        private Set<Recipe> recipes = new HashSet<>();
+        @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
+        private Set<GeneratorRecipe> generatorRecipes = new HashSet<>();
         @LazyCollection(LazyCollectionOption.FALSE)
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
-        private List<Role> roles = new ArrayList<>();
+        private Set<Role> roles = new HashSet<>();
         /**
          * Instantiates a new user.
          */
@@ -97,17 +99,24 @@ import java.util.Set;
          * Gets the recipes
          * @return the users recipes
          */
-        public List<Recipe> getRecipes() {
+        public Set<Recipe> getRecipes() {
             return recipes;
         }
         /**
          * Sets the recipes
          * @param recipes the recipes
          */
-        public void setRecipes(List<Recipe> recipes) {
+        public void setRecipes(Set<Recipe> recipes) {
             this.recipes = recipes;
         }
 
+        public Set<GeneratorRecipe> getGeneratorRecipes() {
+            return generatorRecipes;
+        }
+
+        public void setGeneratorRecipes(Set<GeneratorRecipe> generatorRecipes) {
+            this.generatorRecipes = generatorRecipes;
+        }
 
         @Override
         public String toString() {
@@ -117,4 +126,5 @@ import java.util.Set;
                     ", userId=" + userId +
                     '}';
         }
+
     }

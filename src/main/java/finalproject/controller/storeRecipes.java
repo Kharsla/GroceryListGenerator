@@ -2,6 +2,7 @@ package finalproject.controller;
 
 import finalproject.entity.GeneratorRecipe;
 import finalproject.entity.Recipe;
+import finalproject.entity.User;
 import finalproject.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,12 +28,16 @@ import java.util.List;
 public class storeRecipes extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
+        User user = users.get(0);
 
         int recipeId = Integer.parseInt(req.getParameter("recipe"));
         GenericDao generatorRecipeDao = new GenericDao(GeneratorRecipe.class);
         GeneratorRecipe recipeToAdd = new GeneratorRecipe();
         GenericDao recipeDao = new GenericDao(Recipe.class);
         Recipe recipe = (Recipe)recipeDao.getById(recipeId);
+        recipeToAdd.setUser(user);
         recipeToAdd.setRecipe(recipe);
         generatorRecipeDao.insert(recipeToAdd);
 
