@@ -40,6 +40,10 @@
                         <input name="recipe" type="hidden" value=${recipe.recipeId}>
                         <td><input type="submit" class="btn btn-secondary" value="Delete Recipe"></td>
                     </form>
+                    <form method="get" action="viewRecipe">
+                        <input name="recipe" type="hidden" value=${recipe.recipeId}>
+                        <td><input type="submit" class="btn btn-secondary" value="Edit Recipe"></td>
+                    </form>
                 </tr>
             </c:forEach>
             </tbody>
