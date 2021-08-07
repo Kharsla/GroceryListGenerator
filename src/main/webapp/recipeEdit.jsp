@@ -13,6 +13,7 @@
         <form method="post" action="editRecipe">
             <div class="row">
                 <div class="col-md-4 form-group">
+                    <input name="recipe" type="hidden" value=${recipe.recipeId}>
                     <label for="recipeName">RecipeName:</label>
                     <input type="text" id="recipeName" class="form-control" name="recipeName" value=${recipe.recipeName} required>
                 </div>
@@ -42,6 +43,7 @@
                 </div>
 <c:forEach var="ingredient" items="${ingredients}">
                 <div class="row mt-2">
+                    <input name="recipe" type="hidden" value=${ingredient.ingreidentId}>
                     <div class="col-md-3">
                         <input type="text"  class="form-control" class="ingredient" name="ingredient" value=${ingredient.ingredientName} required>
                     </div>
