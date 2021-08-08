@@ -43,7 +43,7 @@
                 </div>
 <c:forEach var="ingredient" items="${ingredients}">
                 <div class="row mt-2">
-                    <input name="recipe" type="hidden" value=${ingredient.ingreidentId}>
+                    <input name="ingredientId" type="hidden" value=${ingredient.ingredientId}>
                     <div class="col-md-3">
                         <input type="text"  class="form-control" class="ingredient" name="ingredient" value=${ingredient.ingredientName} required>
                     </div>
@@ -62,7 +62,6 @@
                 </div>
 </c:forEach>
             </div>
-            <button id="btn" class="btn btn-secondary">Add more ingredients</button>
             <input class="btn btn-primary" type="submit" Value="submit">
         </form>
     </div>
@@ -72,34 +71,4 @@
 </html>
 
 <!--Source: https://stackoverflow.com/questions/49507557/how-to-dynamically-add-rows-to-a-form-in-html-when-i-click-on-add-row-button -->
-<script>
-    var count=1;
-    $("#btn").click(function(){
 
-        $("#container").append(addNewRow(count));
-        count++;
-        return false;
-    });
-
-    function addNewRow(count){
-        var newrow=
-            '<div class="row mt-2">' +
-            '<div class="col-md-3">' +
-            '<input type="text"  class="form-control" class="ingredient" name="ingredient" required>' +
-            '</div>' +
-            '<div class="col-md-3">' +
-            '<input name="quantity" class="form-control" class="quantity" TYPE="NUMBER" MIN="0.0" MAX="100.0" STEP="0.1" VALUE="0" SIZE="6" required>' +
-            '</div>' +
-            '<div class="col-md-3">' +
-            '<select name="unitOfMeasure" class="form-select form-select-sm" class="unitOfMeasure">' +
-            '<option value="Each">Each</option>' +
-            '<option value="cup">cup</option>' +
-            '<option value="mL">mL</option>' +
-            '<option value="grams">g</option>' +
-            '<option value="tbsp">Tbsp</option>' +
-            '</select>' +
-            '</div>' +
-            '</div>';
-        return newrow;
-    }
-</script>

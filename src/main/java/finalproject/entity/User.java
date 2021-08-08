@@ -31,7 +31,7 @@ import java.util.Set;
         @LazyCollection(LazyCollectionOption.FALSE)
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
         private Set<Recipe> recipes = new HashSet<>();
-        @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)
+        @OneToMany(mappedBy="user", orphanRemoval = true, fetch = FetchType.LAZY)
         private Set<GeneratorRecipe> generatorRecipes = new HashSet<>();
         @LazyCollection(LazyCollectionOption.FALSE)
         @OneToMany(mappedBy="user", cascade = CascadeType.ALL, orphanRemoval = true)

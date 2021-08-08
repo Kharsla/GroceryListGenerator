@@ -13,12 +13,12 @@
 <body>
 <form method="post" action="updatePassword">
     <div class="form-group">
-        <label for="password1">Password:</label>
-        <input class="form-control" type="password" id="password1" name="password1">
+        <label for="passwordOne">Password:</label>
+        <input class="form-control" type="password" id="passwordOne" name="passwordOne">
     </div>
     <div class="form-group">
-        <label for="password2">Re-Enter Password:</label>
-        <input  class="form-control" type="password" id="password2" name="password2"><br>
+        <label for="passwordTwo">Re-Enter Password:</label>
+        <input  class="form-control" type="password" id="passwordTwo" name="passwordTwo"><br>
     </div>
     <input class="btn btn-primary" type="submit"/>
 </form>

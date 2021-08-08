@@ -20,6 +20,7 @@
             <a class="nav-item nav-link" href="addNewRecipe.jsp">Add a New Recipe <span class="sr-only"></span></a>
             <a class="nav-item nav-link" href="<%=request.getContextPath()%>/DisplayGeneratorRecipes"v>Recipes for Grocery List<span class="sr-only"></span></a>
             <a class="nav-item nav-link" href="<%=request.getContextPath()%>/GenerateGroceryList">My Grocery List <span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="viewUserProfile.jsp">My Profile <span class="sr-only"></span></a>
             <a class="nav-item nav-link" href="logout.jsp">Logout <span class="sr-only"></span></a>
         </div>
     </div>

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.http.HttpRequest;
 import java.util.List;
 @WebServlet(
         name = "updatePassword",
@@ -26,15 +25,16 @@ public class updatePassword extends HttpServlet {
         List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
         User user = users.get(0);
 
-        String password1 = req.getParameter("password1");
-        String password2 = req.getParameter("password2");
+        String password1 = req.getParameter("passwordOne");
+        String password2 = req.getParameter("passwordTwo");
         if(password1.equals(password2)) {
             user.setPassword(password1);
             userDao.saveOrUpdate(user);
-            dispatcher = req.getRequestDispatcher("addUserSuccess.jsp");
+            dispatcher = req.getRequestDispatcher("index.jsp");
         } else {
             dispatcher = req.getRequestDispatcher("signupError.jsp");
         }
+        dispatcher.forward(req, resp);
     }
 
 }

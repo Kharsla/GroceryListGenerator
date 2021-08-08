@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(
         name = "editRecipe",
@@ -35,11 +37,39 @@ public class editRecipes extends HttpServlet {
         List<String> quantities = Arrays.asList(req.getParameterValues("quantity"));
         List<String> unitOfMeasurements = Arrays.asList(req.getParameterValues("unitOfMeasure"));
         Recipe recipe = (Recipe) recipeDao.getById(recipeId);
+        Set<Ingredient> originalIngredients = new HashSet<>();
+        Set<Ingredient> formIngredients = new HashSet<>();
 
+        if (recipeName != recipe.getRecipeName()) {
+            recipe.setRecipeName(recipeName);
+            recipeDao.saveOrUpdate(recipe);
+        }
+        if (mealType != recipe.getMealType()) {
+            recipe.setMealType(mealType);
+            recipeDao.saveOrUpdate(recipe);
+        }
 
+        for (String ingredientId: ingredientIds) {
+            Ingredient originalIngredient = (Ingredient) ingredientDao.getById(Integer.parseInt(ingredientId));
+            originalIngredients.add(originalIngredient);
+        }
 
-        for (int i = 0; i < ingredientIds.size(); i++) {
+        for (int i = 0; i < ingredientName.size(); i++) {
+            Ingredient ingredient = new Ingredient();
+            ingredient.setIngredientName(ingredientName.get(i));
+            ingredient.setIngredientId(Integer.parseInt(ingredientIds.get(i)));
+            ingredient.setRecipe(recipe);
+            ingredient.setQuantity(Double.parseDouble(quantities.get(i)));
+            ingredient.setUnitOfMeasure(unitOfMeasurements.get(i));
+            formIngredients.add(ingredient);
+        }
 
+        for (Ingredient originalIngredient: originalIngredients) {
+            for (Ingredient formIngredient: formIngredients) {
+                if (originalIngredient.getIngredientId() == formIngredient.getIngredientId()) {
+                    ingredientDao.saveOrUpdate(formIngredient);
+                }
+            }
         }
 
         req.setAttribute("recipe", recipe);

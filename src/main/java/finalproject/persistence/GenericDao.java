@@ -98,10 +98,11 @@ public class GenericDao<T> {
      * @param entity entity that will be updated
      */
     public void saveOrUpdate(T entity) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.saveOrUpdate(entity);
-        transaction.commit();
+       Session session = sessionFactory.openSession();
+       Transaction transaction = session.beginTransaction();
+       session.saveOrUpdate(entity);
+       // sessionFactory.getCurrentSession().merge(entity);
+       transaction.commit();
         session.close();
     }
 
@@ -118,8 +119,10 @@ public class GenericDao<T> {
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
         query.select(root).where(builder.equal(root.get(criteria),value));
+        List<T> queryResults = session.createQuery(query).getResultList();
+        session.close();
+        return queryResults;
 
-        return session.createQuery(query).getResultList();
     }
 
     /**
