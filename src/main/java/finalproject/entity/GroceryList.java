@@ -56,7 +56,7 @@ public class GroceryList {
             boolean doesExsist = false;
             for(Ingredient ingredient: organizedGroceryList) {
                 if (nextIngredient.getIngredientName().equals(ingredient.getIngredientName()) && nextIngredient.getUnitOfMeasure().equals(ingredient.getUnitOfMeasure())) {
-                    double newQuantity = nextIngredient.getQuantity() + nextIngredient.getQuantity();
+                    double newQuantity = ingredient.getQuantity() + nextIngredient.getQuantity();
                     ingredient.setQuantity(newQuantity);
                     doesExsist = true;
                     break;

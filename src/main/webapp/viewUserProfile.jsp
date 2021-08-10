@@ -8,12 +8,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%@include file="head.jsp"%>
+<%@include file="navbar.jsp"%>
 <head>
     <title>User Profile</title>
 </head>
 <body>
-<%@include file="head.jsp"%>
-<%@include file="navbar.jsp"%>
 <p>UserName: ${user.userName}</p>
 <a href="changePassword.jsp">Change Password</a>
 </body>

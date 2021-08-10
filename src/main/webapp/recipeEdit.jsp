@@ -15,17 +15,17 @@
                 <div class="col-md-4 form-group">
                     <input name="recipe" type="hidden" value=${recipe.recipeId}>
                     <label for="recipeName">RecipeName:</label>
-                    <input type="text" id="recipeName" class="form-control" name="recipeName" value=${recipe.recipeName} required>
+                    <input type="text" id="recipeName" class="form-control" name="recipeName" value="${recipe.recipeName}" required>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-4 form-group">
                     <label for="mealType">Type of Meal:</label>
                     <select  class="form-select form-select-sm" name="mealType" id="mealType">
-                        <option value="breakfast" ${ingredient.mealType.equals("breakfast") ? 'selected' : ''}>Breakfast</option>
-                        <option value="lunch" ${ingredient.mealType.equals("lunch") ? 'selected' : ''}>Lunch</option>
-                        <option value="dinner" ${ingredient.mealType.equals("dinner") ? 'selected' : ''}>Dinner</option>
-                        <option value="snack" ${ingredient.mealType.equals("snack") ? 'selected' : ''}>Snack</option>
+                        <option value="breakfast" ${recipe.mealType.equals("breakfast") ? 'selected' : ''}>Breakfast</option>
+                        <option value="lunch" ${recipe.mealType.equals("lunch") ? 'selected' : ''}>Lunch</option>
+                        <option value="dinner" ${recipe.mealType.equals("dinner") ? 'selected' : ''}>Dinner</option>
+                        <option value="snack" ${recipe.mealType.equals("snack") ? 'selected' : ''}>Snack</option>
                     </select>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="row mt-2">
                     <input name="ingredientId" type="hidden" value=${ingredient.ingredientId}>
                     <div class="col-md-3">
-                        <input type="text"  class="form-control" class="ingredient" name="ingredient" value=${ingredient.ingredientName} required>
+                        <input type="text"  class="form-control" class="ingredient" name="ingredient" value="${ingredient.ingredientName}" required>
                     </div>
                     <div class="col-md-3">
                         <input name="quantity" class="form-control" class="quantity" TYPE="NUMBER" MIN="0.0" MAX="100.0" STEP="0.1" SIZE="6" VALUE=${ingredient.quantity} required>

@@ -30,7 +30,7 @@ public class RemoveGeneratorRecipes extends HttpServlet {
         List<User> users = userDao.getByCriteria("userName", req.getUserPrincipal().getName());
         User user = users.get(0);
         HashMap<String, String> searchCriteria = new HashMap<>();
-        searchCriteria.put("userId", String.valueOf(user.getUserId()));
+        //searchCriteria.put("userId", String.valueOf(user.getUserId()));
         GenericDao generatorRecipeDao = new GenericDao(GeneratorRecipe.class);
         recipesToRemove = generatorRecipeDao.getByMultipleCriteria(user, searchCriteria);
 
