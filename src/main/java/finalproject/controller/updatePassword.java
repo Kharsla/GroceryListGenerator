@@ -32,7 +32,7 @@ public class updatePassword extends HttpServlet {
             userDao.saveOrUpdate(user);
             dispatcher = req.getRequestDispatcher("index.jsp");
         } else {
-            dispatcher = req.getRequestDispatcher("signupError.jsp");
+            dispatcher = req.getRequestDispatcher("updatePasswordError.jsp");
         }
         dispatcher.forward(req, resp);
     }

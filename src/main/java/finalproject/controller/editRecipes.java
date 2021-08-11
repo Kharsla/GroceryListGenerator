@@ -74,7 +74,7 @@ public class editRecipes extends HttpServlet {
 
         req.setAttribute("recipe", recipe);
         req.setAttribute("ingredient", recipe.getIngredients());
-        RequestDispatcher dispatcher = req.getRequestDispatcher("recipeConfirmation.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("editConfirmation.jsp");
 
 
         dispatcher.forward(req, resp);
